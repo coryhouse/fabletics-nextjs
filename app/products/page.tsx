@@ -10,8 +10,11 @@ export default async function ProductsPage() {
   return (
     <>
       <h2>Products</h2>
-      {products.length}
-      <ul>{}</ul>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>{product.name}</li>
+        ))}
+      </ul>
     </>
   );
 }
