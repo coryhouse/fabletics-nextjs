@@ -1,9 +1,10 @@
-import Link from "next/link";
+import NavLink from "./nav-link";
 
 export default function Nav() {
   return (
     <nav>
-      <Link href="/">Home</Link> | <Link href="/products">Products</Link>
+      <NavLink path="/">Home</NavLink> |{" "}
+      <NavLink path="/products">Products</NavLink>
     </nav>
   );
 }
