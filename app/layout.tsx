@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Nav from "./nav";
+import Providers from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,22 +13,16 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: React.ReactNode;
-  homeBanner1: React.ReactNode;
-  homeBanner2: React.ReactNode;
 };
 
-export default function RootLayout({
-  children,
-  homeBanner1,
-  homeBanner2,
-}: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav />
-        {homeBanner1}
-        {homeBanner2}
-        {children}
+        <Providers>
+          <Nav />
+          {children}
+        </Providers>
       </body>
     </html>
   );
